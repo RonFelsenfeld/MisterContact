@@ -1,7 +1,6 @@
 const { Link } = ReactRouterDOM
 
 export function ContactPreview({ contact, onRemoveContact }) {
-    console.log(contact);
     return (
         <li className="contact-preview">
             <h3>{contact.fullName}</h3>

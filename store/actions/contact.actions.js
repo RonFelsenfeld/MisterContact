@@ -1,9 +1,11 @@
 import { contactService } from "../../services/contact.service.js";
-import { ADD_CONTACT, REMOVE_CONTACT, SET_CONTACTS, UPDATE_CONTACT } from "../reducers/contact.reducer.js";
+import { ADD_CONTACT, REMOVE_CONTACT, SET_CONTACTS, SET_FILTER_BY, SET_SORT_BY, UPDATE_CONTACT } from "../reducers/contact.reducer.js";
 import { store } from "../store.js"
 
 export function loadContacts() {
-    return contactService.query()
+    const { filterBy, sortBy } = store.getState().contactModule
+
+    return contactService.query(filterBy, sortBy)
         .then(contacts => {
             store.dispatch({ type: SET_CONTACTS, contacts })
         })
@@ -36,5 +38,14 @@ export function saveContact(contact) {
             throw err
         })
 }
+
+export function setFilterBy(filterBy) {
+    store.dispatch({ type: SET_FILTER_BY, filterBy })
+}
+
+export function setSortBy(sortBy) {
+    store.dispatch({ type: SET_SORT_BY, sortBy })
+}
+
 
 

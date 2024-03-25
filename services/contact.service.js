@@ -10,11 +10,28 @@ export const contactService = {
   save,
   remove,
   getEmptyContact,
+  getDefaultFilter,
+  getDefaultSort
 }
 
-function query(filterBy = {}) {
+function query(filterBy = {}, sortBy = {}) {
   return storageService.query(STORAGE_KEY).then(contacts => {
-    return contacts
+    let contactsToReturn = contacts.slice()
+
+    if (filterBy.txt) {
+      const regExp = new RegExp(filterBy.txt, 'i')
+      contactsToReturn = contactsToReturn.filter(contact => regExp.test(contact.fullName) || regExp.test(contact.phone))
+    }
+
+    if (sortBy.fullName) {
+      contactsToReturn = contactsToReturn.sort((c1, c2) => (c1.fullName.localeCompare(c2.fullName)) * sortBy.fullName)
+    }
+
+    if (sortBy.email) {
+      contactsToReturn = contactsToReturn.sort((c1, c2) => (c1.email.localeCompare(c2.email)) * sortBy.email)
+    }
+
+    return contactsToReturn
   })
 }
 
@@ -40,6 +57,14 @@ function getEmptyContact() {
     phone: '',
     email: ''
   }
+}
+
+function getDefaultFilter() {
+  return { txt: '' }
+}
+
+function getDefaultSort() {
+  return { fullName: 1 }
 }
 
 ////////////////////////////////////////////////////
