@@ -50,7 +50,7 @@ function _createContacts() {
     contacts = []
     contacts.push(_createContact('Ido Yotvat'))
     contacts.push(_createContact('Ron Felsenfeld'))
-    contacts.push(_createContact('Muki Ja'))
+    contacts.push(_createContact('Atar Mor'))
     contacts.push(_createContact('Popo Pa'))
     contacts.push(_createContact('Lolo La'))
     utilService.saveToStorage(STORAGE_KEY, contacts)
