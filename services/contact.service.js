@@ -10,6 +10,8 @@ export const contactService = {
   save,
   remove,
   getEmptyContact,
+  getDefaultFilter,
+  getDefaultSort
 }
 
 function query(filterBy = {}) {
@@ -40,6 +42,14 @@ function getEmptyContact() {
     phone: '',
     email: ''
   }
+}
+
+function getDefaultFilter() {
+  return { fullName: "" }
+}
+
+function getDefaultSort() {
+  return { fullName: 1 }
 }
 
 ////////////////////////////////////////////////////
