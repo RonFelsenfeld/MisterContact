@@ -3,7 +3,7 @@ import { ADD_CONTACT, REMOVE_CONTACT, SET_CONTACTS, UPDATE_CONTACT } from "../re
 import { store } from "../store.js"
 
 export function loadContacts() {
-    return contactService.query(filterBy)
+    return contactService.query()
         .then(contacts => {
             store.dispatch({ type: SET_CONTACTS, contacts })
         })

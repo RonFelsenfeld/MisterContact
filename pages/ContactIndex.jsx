@@ -1,14 +1,14 @@
-import { removeContact, saveContact } from "../store/actions/contact.actions.js"
+import { loadContacts, removeContact, saveContact } from "../store/actions/contact.actions.js"
 
 const { useSelector } = ReactRedux
 const { useEffect } = React
 
 
 export function ContactIndex() {
-    const contacts = useSelector(storeState => storeState.todoModule.todos)
+    const contacts = useSelector(storeState => storeState.contactModule.contacts)
 
     useEffect(() => {
-        loadTodos()
+        loadContacts()
             .catch(() => {
                 showErrorMsg('Could not load contacts')
             })
