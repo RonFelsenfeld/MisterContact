@@ -3,6 +3,7 @@ const { Route, Routes } = ReactRouterDOM
 const { Provider } = ReactRedux
 
 import { HomePage } from "./pages/HomePage.jsx"
+import { ContactDetails } from './pages/ContactDetails.jsx'
 
 
 export function RootCmp() {
@@ -13,6 +14,7 @@ export function RootCmp() {
         <main>
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/contact/:contactId" element={<ContactDetails />} />
           </Routes>
         </main>
       </section>
