@@ -6,6 +6,7 @@ import { ContactIndex } from "./pages/ContactIndex.jsx"
 import { HomePage } from "./pages/HomePage.jsx"
 import { ContactDetails } from './pages/ContactDetails.jsx'
 import { store } from "./store/store.js"
+import { AppHeader } from "./cmp/AppHeader.jsx"
 
 
 export function RootCmp() {
@@ -13,6 +14,7 @@ export function RootCmp() {
     <Provider store={store}>
       <Router>
         <section className="app">
+          <AppHeader/>
           <main>
             <Routes>
               <Route path="/" element={<HomePage />} />
