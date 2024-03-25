@@ -1,4 +1,4 @@
-import { contactService } from "../../contact.service.js";
+import { contactService } from "../../services/contact.service.js";
 import { ADD_CONTACT, REMOVE_CONTACT, SET_CONTACTS, UPDATE_CONTACT } from "../reducers/contact.reducer.js";
 import { store } from "../store.js"
 

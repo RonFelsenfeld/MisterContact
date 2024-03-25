@@ -5,6 +5,7 @@ const { Provider } = ReactRedux
 import { ContactIndex } from "./pages/ContactIndex.jsx"
 import { HomePage } from "./pages/HomePage.jsx"
 import { ContactDetails } from './pages/ContactDetails.jsx'
+import { store } from "./store/store.js"
 
 
 export function RootCmp() {
@@ -17,7 +18,7 @@ export function RootCmp() {
               <Route path="/" element={<HomePage />} />
               <Route path="/contact" element={<ContactIndex />} />
               <Route path="/contact/:contactId" element={<ContactDetails />} />
-          </Routes>
+            </Routes>
           </main>
         </section>
       </Router>
