@@ -3,7 +3,9 @@ import { ADD_CONTACT, REMOVE_CONTACT, SET_CONTACTS, SET_FILTER_BY, SET_SORT_BY, 
 import { store } from "../store.js"
 
 export function loadContacts() {
-    return contactService.query()
+    const { filterBy, sortBy } = store.getState().contactModule
+
+    return contactService.query(filterBy, sortBy)
         .then(contacts => {
             store.dispatch({ type: SET_CONTACTS, contacts })
         })

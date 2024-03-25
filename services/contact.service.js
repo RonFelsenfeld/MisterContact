@@ -14,9 +14,16 @@ export const contactService = {
   getDefaultSort
 }
 
-function query(filterBy = {}) {
+function query(filterBy = {}, sortBy = {}) {
   return storageService.query(STORAGE_KEY).then(contacts => {
-    return contacts
+    let contactsToReturn = contacts.slice()
+
+    if (filterBy.txt) {
+      const regExp = new RegExp(filterBy.txt, 'i')
+      contactsToReturn = contactsToReturn.filter(contact => regExp.test(contact.fullName) || regExp.test(contact.phone))
+    }
+
+    return contactsToReturn
   })
 }
 
@@ -45,7 +52,7 @@ function getEmptyContact() {
 }
 
 function getDefaultFilter() {
-  return { fullName: "" }
+  return { txt: '' }
 }
 
 function getDefaultSort() {
