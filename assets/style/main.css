@@ -22,3 +22,10 @@ button {
   border: none;
 }
 
+header {
+  background-color: lightskyblue;
+  padding: 10px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
