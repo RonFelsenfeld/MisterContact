@@ -10,3 +10,6 @@
 /* Pages */
 
 /* Components */
+@import 'cmps/contact-list.css';
+@import 'cmps/contact-preview.css';
+@import 'cmps/contact-index.css';

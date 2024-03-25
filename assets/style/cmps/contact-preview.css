@@ -1,0 +1,39 @@
+.contact-preview {
+    padding: .5em;
+    width: 200px;
+    /* height: 120px; */
+    background-color: mediumaquamarine;
+    text-align: center;
+    font-family: Arial;
+    font-size: .8em;
+    border-radius: 10px;
+    transition: .5s;
+}
+
+.contact-preview:hover {
+    background-color: rgb(68, 130, 110);
+    color: rgb(237, 235, 233);
+    cursor: pointer;
+}
+
+.clean-list{
+    list-style-type: none;
+}
+
+.actions{
+    padding: 15px;
+}
+
+/* .actions */
+ button{
+    margin-left: 10px;
+    padding:.5em .7em .5em .7em;
+    border-radius: .3em;
+    background-color: rgb(234, 219, 228);
+}
+
+/* .actions */
+ button:hover{
+    background-color: rgb(178, 129, 158);
+
+}

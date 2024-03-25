@@ -35,7 +35,7 @@ export function ContactIndex() {
     if (!contacts) return <div>Loading...</div>
     return (
         <section className="contact-index" >
-            <Link to={'/contact/edit'}><button>Add</button></Link>
+            <Link to={'/contact/edit'}><button className="add-btn">Add</button></Link>
             <ContactList contacts={contacts} onRemoveContact={onRemoveContact} />
             {(!contacts.length) && <div>No contacts to show...</div>}
         </section>
