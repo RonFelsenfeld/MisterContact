@@ -3,6 +3,7 @@ import { loadContacts, removeContact, saveContact, setFilterBy, setSortBy } from
 
 import { ContactList } from "../cmps/ContactList.jsx"
 import { ContactFilter } from "../cmps/ContactFilter.jsx"
+import { ContactSort } from "../cmps/ContactSort.jsx"
 
 const { useSelector } = ReactRedux
 const { useEffect } = React
@@ -48,6 +49,8 @@ export function ContactIndex() {
     return (
         <section className="contact-index" >
             <ContactFilter onSetFilter={onSetFilter} filterBy={filterBy} />
+
+            <ContactSort onSetSort={onSetSort} sortBy={sortBy} />
 
             <Link to={'/contact/edit'}><button>Add</button></Link>
             <ContactList contacts={contacts} onRemoveContact={onRemoveContact} />

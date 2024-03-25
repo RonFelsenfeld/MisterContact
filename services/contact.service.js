@@ -23,6 +23,14 @@ function query(filterBy = {}, sortBy = {}) {
       contactsToReturn = contactsToReturn.filter(contact => regExp.test(contact.fullName) || regExp.test(contact.phone))
     }
 
+    if (sortBy.fullName) {
+      contactsToReturn = contactsToReturn.sort((c1, c2) => (c1.fullName.localeCompare(c2.fullName)) * sortBy.fullName)
+    }
+
+    if (sortBy.email) {
+      contactsToReturn = contactsToReturn.sort((c1, c2) => (c1.email.localeCompare(c2.email)) * sortBy.email)
+    }
+
     return contactsToReturn
   })
 }
