@@ -1,31 +1,12 @@
-/* BASE */
+/* Setup */
+/* @import 'setup/vars.css'; */
+/* @import 'setup/typography.css'; */
 
-* {
-  box-sizing: border-box;
-}
+/* Base */
+@import 'base/base.css';
+/* @import 'base/helpers.css'; */
+/* @import 'base/layout.css'; */
 
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-a {
-  margin: 0;
-  padding: 0;
-}
+/* Pages */
 
-button {
-  cursor: pointer;
-  border: none;
-}
-
-header {
-  background-color: lightskyblue;
-  padding: 10px;
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-}
+/* Components */

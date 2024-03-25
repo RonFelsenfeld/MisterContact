@@ -6,10 +6,10 @@ import { ContactIndex } from "./pages/ContactIndex.jsx"
 import { HomePage } from "./pages/HomePage.jsx"
 import { ContactDetails } from './pages/ContactDetails.jsx'
 import { ContactEdit } from "./pages/ContactEdit.jsx"
-import { store } from "./store/store.js"
-
 import { AppHeader } from "./cmps/AppHeader.jsx"
+import { AppFooter } from "./cmps/AppFooter.jsx"
 
+import { store } from "./store/store.js"
 
 export function RootCmp() {
   return (
@@ -27,6 +27,7 @@ export function RootCmp() {
             </Routes>
           </main>
         </section>
+        <AppFooter />
       </Router>
     </Provider>
   )
