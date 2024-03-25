@@ -9,7 +9,6 @@ const initialState = {
 
 export function contactReducer(state = initialState, action = {}) {
     switch (action.type) {
-        //contacts
         case SET_CONTACTS:
             return { ...state, contacts: action.contacts }
 
