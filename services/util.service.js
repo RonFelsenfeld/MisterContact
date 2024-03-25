@@ -7,6 +7,8 @@ export const utilService = {
   animateCSS,
   debounce,
   getRelativeTime,
+  generateRndPhoneNumber,
+  generateRndEmail
 }
 
 function makeId(length = 6) {
@@ -149,4 +151,31 @@ function getRelativeTime(timestamp) {
       day: 'numeric',
     })
   }
+}
+
+
+function generateRndPhoneNumber() {
+  let prefix = "050";
+  let middle = Math.floor(Math.random() * 899) + 100;
+  let end = Math.floor(Math.random() * 10000)
+
+  middle = middle.toString().padStart(3, '0');
+  end = end.toString().padStart(4, '0');
+
+  return `${prefix}-${middle}-${end}`;
+}
+
+function generateRndEmail() {
+  let usernameLength = Math.floor(Math.random() * 10) + 5
+  let username = ""
+  let characters = "abcdefghijklmnopqrstuvwxyz0123456789"
+
+  for (let i = 0; i < usernameLength; i++) {
+    username += characters.charAt(Math.floor(Math.random() * characters.length))
+  }
+
+  let domains = ["gmail.com", "yahoo.com", "hotmail.com", "outlook.com", "icloud.com"];
+  let domain = domains[Math.floor(Math.random() * domains.length)]
+
+  return `${username}@${domain}`
 }
