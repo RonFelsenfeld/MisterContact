@@ -10,6 +10,7 @@ import { AppHeader } from "./cmps/AppHeader.jsx"
 import { AppFooter } from "./cmps/AppFooter.jsx"
 
 import { store } from "./store/store.js"
+import { UserMsg } from "./cmps/UserMsg.jsx"
 
 export function RootCmp() {
   return (
@@ -25,6 +26,7 @@ export function RootCmp() {
               <Route path="/contact/edit" element={<ContactEdit />} />
               <Route path="/contact/edit/:contactId" element={<ContactEdit />} />
             </Routes>
+            <UserMsg />
           </main>
         </section>
         <AppFooter />

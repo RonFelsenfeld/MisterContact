@@ -5,11 +5,11 @@ const { NavLink } = ReactRouterDOM
 export function AppHeader() {
   return (
     <header>
-      <UserMsg />
+      <h1>I love my contacts</h1>
       <nav>
-        <NavLink to="/">Home</NavLink> |<NavLink to="/contact">contacts</NavLink>
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/contact">contacts</NavLink>
       </nav>
-      <h1>i love my contacts</h1>
     </header>
   )
 }
