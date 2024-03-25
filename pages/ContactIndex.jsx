@@ -22,14 +22,6 @@ export function ContactIndex() {
             .catch(() => showErrorMsg('Had trouble removing the contact'))
     }
 
-    function onUpdateContact(contact) {
-        saveContact(contact)
-            .then(() => {
-                showSuccessMsg(`Updated contact successfully`)
-            })
-            .catch(() => showErrorMsg('Had trouble updating the contact'))
-    }
-
     function onAddContact(contact) {
         saveContact(contact)
             .then(() => {
@@ -41,7 +33,7 @@ export function ContactIndex() {
     if (!contacts) return <div>Loading...</div>
     return (
         <section className="contact-index" >
-            {/* <ContactList contacts={contacts} onUpdateContact={onUpdateContact} onRemoveContact={onRemoveContact} /> */}
+            <ContactList contacts={contacts} onRemoveContact={onRemoveContact} />
             {(!contacts.length) && <div>No contacts to show...</div>}
         </section>
     )
