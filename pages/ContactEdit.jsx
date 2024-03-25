@@ -1,5 +1,5 @@
 import { contactService } from "../services/contact.service.js"
-import { showErrorMsg } from "../services/event-bus.service.js"
+import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service.js"
 import { saveContact } from "../store/actions/contact.actions.js"
 
 const { useState, useEffect } = React
@@ -8,11 +8,12 @@ const { Link, useNavigate, useParams } = ReactRouterDOM
 export function ContactEdit() {
   const [contactToEdit, setContactToEdit] = useState(contactService.getEmptyContact())
   const navigate = useNavigate()
-  const { contactId } = useParams
+  const { contactId } = useParams()
 
   useEffect(() => {
+    console.log(contactId);
     if (contactId) loadContact()
-  }, [])
+  }, [contactId])
 
   function loadContact() {
     contactService
@@ -30,8 +31,9 @@ export function ContactEdit() {
     setContactToEdit((prevContact) => ({ ...prevContact, [field]: value }))
   }
 
-  function onSaveContact() {
+  function onSaveContact(ev) {
     ev.preventDefault()
+    console.log('contactToEdit', contactToEdit);
     if (!contactToEdit.fullName) contactService.fullName = 'Anonymous'
 
     saveContact(contactToEdit)

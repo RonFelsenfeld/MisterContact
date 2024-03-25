@@ -8,7 +8,7 @@ import { ContactDetails } from './pages/ContactDetails.jsx'
 import { ContactEdit } from "./pages/ContactEdit.jsx"
 import { store } from "./store/store.js"
 
-import { AppHeader } from "./cmp/AppHeader.jsx"
+import { AppHeader } from "./cmps/AppHeader.jsx"
 
 
 export function RootCmp() {

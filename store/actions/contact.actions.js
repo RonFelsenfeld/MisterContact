@@ -13,10 +13,10 @@ export function loadContacts() {
         })
 }
 
-export function removeContact(contactsId) {
-    return contactService.remove(contactsId)
+export function removeContact(contactId) {
+    return contactService.remove(contactId)
         .then(() => {
-            store.dispatch({ type: REMOVE_CONTACT, contactsId })
+            store.dispatch({ type: REMOVE_CONTACT, contactId })
         })
         .catch(err => {
             console.log('contacts actions-> cannot remove contacts', err);
