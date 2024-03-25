@@ -2,6 +2,8 @@ const Router = ReactRouterDOM.HashRouter
 const { Route, Routes } = ReactRouterDOM
 const { Provider } = ReactRedux
 
+import { HomePage } from "./pages/HomePage.jsx"
+
 
 export function RootCmp() {
   return (
@@ -10,7 +12,7 @@ export function RootCmp() {
       <section className="app">
         <main>
           <Routes>
-
+            <Route path="/" element={<HomePage />} />
           </Routes>
         </main>
       </section>
