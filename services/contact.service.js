@@ -59,7 +59,7 @@ function _createContacts() {
 
 function _createContact(fullName = '') {
   const contact = getEmptyContact()
-
+  contact._id = utilService.makeId()
   contact.fullName = fullName
   contact.phone = utilService.generateRndPhoneNumber()
   contact.email = utilService.generateRndEmail()
